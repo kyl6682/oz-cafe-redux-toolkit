@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import data from '../assets/data'
+import { configureStore } from '@reduxjs/toolkit'
 
-const menuSlice = createSlice({
+export const menuSlice = createSlice({
     name : 'menu',
     initialState : data.menu,
     reducers : {
@@ -9,7 +10,7 @@ const menuSlice = createSlice({
     }
 })
 
-const cartSlice = createSlice({
+export const cartSlice = createSlice({
     name : 'cart',
     initialState : [],
     reducers : {
@@ -18,3 +19,9 @@ const cartSlice = createSlice({
     }
 })
 
+export const store = configureStore({
+    reducer: {
+        menu : menuSlice.reducer,
+        cart : cartSlice.reducer,
+    }
+})
