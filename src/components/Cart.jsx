@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import data from "../assets/data";
-import { useDispatch } from "react-redux";
 import { cartSlice } from "../redux/redux";
 
 function Cart() {
